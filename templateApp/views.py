@@ -3,9 +3,13 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+# def home(request):
+#     return HttpResponse('<h1>Welcome to django template</h1>')
 def home(request):
-    return HttpResponse('<h1>Welcome to django template</h1>')
-
+    context={
+                     }
+   
+    return render(request, 'templateApp/home.html',context)
 
 def body(request):
     context={'title':'clarusway',
