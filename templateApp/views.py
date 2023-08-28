@@ -24,3 +24,11 @@ def body(request):
    
     return render(request, 'templateApp/index.html',context)
     # return render(request, 'templateApp/index.html',{'name':'yunus'})
+
+from .models import Student
+def studentView(request):
+     students=Student.objects.all()
+     context={
+         'students':students
+          }
+     return render(request,'templateApp/student.html',context)
