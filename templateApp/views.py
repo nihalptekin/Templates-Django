@@ -14,7 +14,8 @@ def body(request):
              'dict':{'k1':'value1',
                      'k2':'value2'
                      },
-                      'number':0
+                      'number':0,
+                      'desc':'this template from APP dir'
                      }
    
     return render(request, 'templateApp/index.html',context)

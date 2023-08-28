@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/style.css">
+
     <title>Templates Home Page</title>
   </head>
   <body>
@@ -19,11 +21,36 @@
     <p>{{ number }}</p>
 
     <!-- for döngüsü yapmak icin asagidaki gibi yazariz. snippedi vasr zaten -->
-    <ul>    {% for name in list %}
+    <ul>   
+        
+    {% for name in list %}
        <li>{{name}}<li> 
     {% endfor %}
     <ul>
 
-        
+    <!-- if endif -->
+
+{% if number > 0 %}
+    number bigger then 0
+{% else %}
+    number lower or equal to 0
+{% endif %}
+<!--- this line HTML comment --->
+{% comment %} frontendin görmek istemedigi commenti django kommenti ile yapariy. o zaman sadece backendde kalir. {% endcomment %}
+{% comment %} his line DTL comment {% endcomment %}
+ {#tek satir komment #} 
+    
+
+ {% comment %}** filtre uygulama. googledan ftl filter yazarak ualsabiliriz ***{% endcomment %} 
+ <p>{{ desc | title }}</p>
+ <p>{{ desc | truncatechars:7 }}</p> 
+ <p>{{ desc | wordcount }}</p> 
+ {% comment %} <p>{{ desc | wordwrap: 5 }}</p> {% endcomment %}
+
+<img src="static/ucak.jpeg" alt="flug">
+
+{% load static %}
+<img src="{% static 'ucak.jpeg' %}" alt="flug">
+
   </body>
 </html>
