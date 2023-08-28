@@ -5,3 +5,17 @@ from django.http import HttpResponse
 
 def home(request):
     return HttpResponse('<h1>Welcome to django template</h1>')
+
+
+def body(request):
+    context={'title':'clarusway',
+             'path':'FS',
+             'list':['yunus', 'özlem','fatih','esra','hüseyin','nihal','ermihan','halit','irfan'],
+             'dict':{'k1':'value1',
+                     'k2':'value2'
+                     },
+                      'number':0
+                     }
+   
+    return render(request, 'templateApp/index.html',context)
+    # return render(request, 'templateApp/index.html',{'name':'yunus'})
