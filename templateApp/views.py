@@ -29,6 +29,6 @@ from .models import Student
 def studentView(request):
      students=Student.objects.all()
      context={
-         'students':students
+         'students':students,
           }
      return render(request,'templateApp/student.html',context)

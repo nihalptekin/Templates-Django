@@ -1,6 +1,8 @@
 
     {% extends 'templateApp/base.html' %}
-    
+    {% block title %}
+    index sayfasındasınız
+    {% endblock title %}   
     {% block body %}
         
     <h1>CLARUSWAY</h1>
@@ -44,12 +46,9 @@
 
 <img src="static/ucak.jpeg" alt="flug">
 
-{% load static %}
+{% comment %} {% load static %} {% endcomment %}
 <img src="{% static 'ucak.jpeg' %}" alt="flug">
 
-  </body>
-</html>
-        
-    {% endblock body %}
+{% endblock body %}
         
 
