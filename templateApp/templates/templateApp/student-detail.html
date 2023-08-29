@@ -1,4 +1,6 @@
-{% extends 'templateApp/base.html' %} {% block body %} {% comment %} {% for std
+{% extends 'templateApp/base.html' %} 
+
+{% block body %} {% comment %} {% for std
 in students %}
 <li>{{ std }}</li>
 <li>{{ std.first_name }}</li>
@@ -8,6 +10,6 @@ in students %}
 {% endfor %} {% endcomment %} 
 {{object.first_name}} 
 {{object.last_name}}
+<img src="{{ object.picture }}" alt="">
 
-{%
-endblock body %}
+{% endblock body %}

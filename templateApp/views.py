@@ -59,17 +59,26 @@ def student_addView(request):
 class StudentAddView(generic.CreateView):
     model=Student
     form_class=StudentForm
-    success_url=reverse_lazy('student')
+    success_url=reverse_lazy('list2')
     # normalde modelismi_form.html diósyayi istiyor bizim dosyamizin adi student_add.html idi. biz de default olarak onu kabul etmesi icin template_app yazdik.
     template_name='templateApp/student_add.html'
 
 class StudentListView(generic.ListView):
     model=Student
+    #pk_url_kwarg='id   pk yerine farkli kullanmak istersek
     # form_class=StudentForm
     # success_url=reverse_lazy('list')
-    # normalde modelismi_form.html diósyayi istiyor bizim dosyamizin adi student_add.html idi. biz de default olarak onu kabul etmesi icin template_app yazdik.
+    # normalde modelismi_form.html dosyayi istiyor bizim dosyamizin adi student_add.html idi. biz de default olarak onu kabul etmesi icin template_app yazdik.
      
     template_name='templateApp/student.html'
 
 class StudentDetailView(generic.DetailView):
     model=Student
+
+
+class StudentUpdateView(generic.UpdateView):
+    model=Student
+    form_class=StudentForm
+    success_url=reverse_lazy('list2')
+    # normalde modelismi_form.html diósyayi istiyor bizim dosyamizin adi student_add.html idi. biz de default olarak onu kabul etmesi icin template_app yazdik.
+    template_name='templateApp/student_add.html'
