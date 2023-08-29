@@ -7,7 +7,7 @@
 
 {% block body %}
 {% comment %} as_p alt alta formu gösterir {% endcomment %}
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     {% comment %} form post sirasinda sizmalari/taklitleri engellemek icin csrf_token kullanilir. settingste middleware kisminda da görürüz {% endcomment %}
     {% csrf_token  %}
     {{ form.as_p }}

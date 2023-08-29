@@ -1,0 +1,13 @@
+{% extends 'templateApp/base.html' %} {% block body %} {% comment %} {% for std
+in students %}
+<li>{{ std }}</li>
+<li>{{ std.first_name }}</li>
+<li>{{ std.last_name }}</li>
+<li>{{ std.number }}</li>
+
+{% endfor %} {% endcomment %} 
+{{object.first_name}} 
+{{object.last_name}}
+
+{%
+endblock body %}

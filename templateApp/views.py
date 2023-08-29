@@ -38,8 +38,11 @@ def studentView(request):
 
 from .forms import StudentForm
 from django.shortcuts import redirect
+from django.views import generic
+from django.urls import reverse_lazy
 
 def student_addView(request):
+
     form=StudentForm()
     if request.method=='POST':
         form=StudentForm(request.POST)
@@ -51,3 +54,22 @@ def student_addView(request):
          'form':form,
           }
     return render(request,'templateApp/student_add.html',context)
+
+
+class StudentAddView(generic.CreateView):
+    model=Student
+    form_class=StudentForm
+    success_url=reverse_lazy('student')
+    # normalde modelismi_form.html diósyayi istiyor bizim dosyamizin adi student_add.html idi. biz de default olarak onu kabul etmesi icin template_app yazdik.
+    template_name='templateApp/student_add.html'
+
+class StudentListView(generic.ListView):
+    model=Student
+    # form_class=StudentForm
+    # success_url=reverse_lazy('list')
+    # normalde modelismi_form.html diósyayi istiyor bizim dosyamizin adi student_add.html idi. biz de default olarak onu kabul etmesi icin template_app yazdik.
+     
+    template_name='templateApp/student.html'
+
+class StudentDetailView(generic.DetailView):
+    model=Student
