@@ -1,0 +1,18 @@
+{% extends 'templateApp/base.html' %}
+
+{% block title %}
+    this page for STUDENT APP
+{% endblock title %}
+
+
+{% block body %}
+{% comment %} as_p alt alta formu gösterir {% endcomment %}
+<form action="" method="post">
+    {% comment %} form post sirasinda sizmalari/taklitleri engellemek icin csrf_token kullanilir. settingste middleware kisminda da görürüz {% endcomment %}
+    {% csrf_token  %}
+    {{ form.as_p }}
+    <input type="submit" value=Add>
+</form>
+
+{% endblock body %}
+    
